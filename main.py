@@ -9,108 +9,80 @@ from dataset import gen_dataloader
 from train import train_m2p2, eval_m2p2
 
 
-parser = argparse.ArgumentParser(description='MOSEI Sentiment Analysis')
-parser.add_argument('-f', default='', type=str)
-
-# Fixed
-parser.add_argument('--model', type=str, default='MulT',
-                    help='name of the model to use (Transformer, etc.)')
-
-# Tasks
-parser.add_argument('--vonly', action='store_true',
-                    help='use the crossmodal fusion into v (default: False)')
-parser.add_argument('--aonly', action='store_true',
-                    help='use the crossmodal fusion into a (default: False)')
-parser.add_argument('--lonly', action='store_true',
-                    help='use the crossmodal fusion into l (default: False)')
-parser.add_argument('--aligned', action='store_true',
-                    help='consider aligned experiment or not (default: False)')
-parser.add_argument('--dataset', type=str, default='qps',
-                    help='dataset to use (default: qps)')
-parser.add_argument('--data_path', type=str, default='data',
-                    help='path for storing the dataset')
-
-# Dropouts
-parser.add_argument('--attn_dropout', type=float, default=0.1,
-                    help='attention dropout')
-parser.add_argument('--attn_dropout_a', type=float, default=0.0,
-                    help='attention dropout (for audio)')
-parser.add_argument('--attn_dropout_v', type=float, default=0.0,
-                    help='attention dropout (for visual)')
-parser.add_argument('--relu_dropout', type=float, default=0.1,
-                    help='relu dropout')
-parser.add_argument('--embed_dropout', type=float, default=0.25,
-                    help='embedding dropout')
-parser.add_argument('--res_dropout', type=float, default=0.1,
-                    help='residual block dropout')
-parser.add_argument('--out_dropout', type=float, default=0.0,
-                    help='output layer dropout')
-
-# Architecture
-parser.add_argument('--nlevels', type=int, default=5,
-                    help='number of layers in the network (default: 5)')
-parser.add_argument('--num_heads', type=int, default=5,
-                    help='number of heads for the transformer network (default: 5)')
-parser.add_argument('--attn_mask', action='store_false',
-                    help='use attention mask for Transformer (default: true)')
-
-# Tuning
-parser.add_argument('--batch_size', type=int, default=24, metavar='N',
-                    help='batch size (default: 24)')
-parser.add_argument('--clip', type=float, default=0.8,
-                    help='gradient clip value (default: 0.8)')
-parser.add_argument('--lr', type=float, default=1e-3,
-                    help='initial learning rate (default: 1e-3)')
-parser.add_argument('--optim', type=str, default='Adam',
-                    help='optimizer to use (default: Adam)')
-parser.add_argument('--num_epochs', type=int, default=40,
-                    help='number of epochs (default: 40)')
-parser.add_argument('--when', type=int, default=20,
-                    help='when to decay learning rate (default: 20)')
-parser.add_argument('--batch_chunk', type=int, default=1,
-                    help='number of chunks per batch (default: 1)')
-
-# Logistics
-parser.add_argument('--log_interval', type=int, default=30,
-                    help='frequency of result logging (default: 30)')
-parser.add_argument('--seed', type=int, default=1111,
-                    help='random seed')
-parser.add_argument('--no_cuda', action='store_true',
-                    help='do not use cuda')
-parser.add_argument('--name', type=str, default='mult',
-                    help='name of the trial (default: "mult")')
-args = parser.parse_args()
-
-torch.set_default_tensor_type('torch.FloatTensor')
-if torch.cuda.is_available():
-    if args.no_cuda:
-        print("WARNING: You have a CUDA device, so you should probably not run with --no_cuda")
-    else:
-        torch.cuda.manual_seed(args.seed)
-        torch.set_default_tensor_type('torch.cuda.FloatTensor')
-        use_cuda = True
-
-
-#
-# Hyperparameters
-#
-####################################################################
-
-hyp_params = args
-hyp_params.orig_d_a, hyp_params.orig_d_v, hyp_params.orig_d_l = 73, 512, 200
-hyp_params.a_len, hyp_params.v_len, hyp_params.l_len = 220, 350, 610
-hyp_params.layers = args.nlevels
-hyp_params.use_cuda = True
-#hyp_params.dataset = dataset
-hyp_params.when = args.when
-hyp_params.batch_chunk = args.batch_chunk
-#hyp_params.n_train, hyp_params.n_valid, hyp_params.n_test = len(train_data), len(valid_data), len(test_data)
-hyp_params.model = str.upper(args.model.strip())
-hyp_params.output_dim = 1
-#hyp_params.criterion = criterion_dict.get(dataset, 'L1Loss')
-
-
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description='MOSEI Sentiment Analysis')
+    parser.add_argument('-f', default='', type=str)
+
+    # Fixed
+    parser.add_argument('--model', type=str, default='MulT',
+                        help='name of the model to use (Transformer, etc.)')
+
+    # Tasks
+    parser.add_argument('--vonly', action='store_true',
+                        help='use the crossmodal fusion into v (default: False)')
+    parser.add_argument('--aonly', action='store_true',
+                        help='use the crossmodal fusion into a (default: False)')
+    parser.add_argument('--lonly', action='store_true',
+                        help='use the crossmodal fusion into l (default: False)')
+    parser.add_argument('--aligned', action='store_true',
+                        help='consider aligned experiment or not (default: False)')
+    parser.add_argument('--dataset', type=str, default='qps',
+                        help='dataset to use (default: qps)')
+    parser.add_argument('--data_path', type=str, default='data',
+                        help='path for storing the dataset')
+
+    # Dropouts
+    parser.add_argument('--attn_dropout', type=float, default=0.1,
+                        help='attention dropout')
+    parser.add_argument('--attn_dropout_a', type=float, default=0.0,
+                        help='attention dropout (for audio)')
+    parser.add_argument('--attn_dropout_v', type=float, default=0.0,
+                        help='attention dropout (for visual)')
+    parser.add_argument('--relu_dropout', type=float, default=0.1,
+                        help='relu dropout')
+    parser.add_argument('--embed_dropout', type=float, default=0.25,
+                        help='embedding dropout')
+    parser.add_argument('--res_dropout', type=float, default=0.1,
+                        help='residual block dropout')
+    parser.add_argument('--out_dropout', type=float, default=0.0,
+                        help='output layer dropout')
+
+    # Architecture
+    parser.add_argument('--nlevels', type=int, default=5,
+                        help='number of layers in the network (default: 5)')
+    parser.add_argument('--num_heads', type=int, default=5,
+                        help='number of heads for the transformer network (default: 5)')
+    parser.add_argument('--attn_mask', action='store_false',
+                        help='use attention mask for Transformer (default: true)')
+
+    # Tuning
+    parser.add_argument('--batch_size', type=int, default=24, metavar='N',
+                        help='batch size (default: 24)')
+    parser.add_argument('--clip', type=float, default=0.8,
+                        help='gradient clip value (default: 0.8)')
+    parser.add_argument('--lr', type=float, default=1e-3,
+                        help='initial learning rate (default: 1e-3)')
+    parser.add_argument('--optim', type=str, default='Adam',
+                        help='optimizer to use (default: Adam)')
+    parser.add_argument('--num_epochs', type=int, default=40,
+                        help='number of epochs (default: 40)')
+    parser.add_argument('--when', type=int, default=20,
+                        help='when to decay learning rate (default: 20)')
+    parser.add_argument('--batch_chunk', type=int, default=1,
+                        help='number of chunks per batch (default: 1)')
+
+    # Logistics
+    parser.add_argument('--log_interval', type=int, default=30,
+                        help='frequency of result logging (default: 30)')
+    parser.add_argument('--seed', type=int, default=1111,
+                        help='random seed')
+    parser.add_argument('--no_cuda', action='store_true',
+                        help='do not use cuda')
+    parser.add_argument('--name', type=str, default='mult',
+                        help='name of the trial (default: "mult")')
+
+
     parser.add_argument('--fd', required=False, default=9, type=int, help='fold id')
     parser.add_argument('--mod', required=False, default='avl', type=str,
                         help='modalities: a,v,l, or any combination of them')
@@ -123,6 +95,27 @@ if __name__ == '__main__':
                         help='print more information')
 
     args = parser.parse_args()
+
+    torch.set_default_tensor_type('torch.FloatTensor')
+    #
+    # Hyperparameters
+    #
+    ####################################################################
+
+    hyp_params = args
+    hyp_params.orig_d_a, hyp_params.orig_d_v, hyp_params.orig_d_l = 73, 512, 200
+    hyp_params.a_len, hyp_params.v_len, hyp_params.l_len = 220, 350, 610
+    hyp_params.layers = args.nlevels
+    hyp_params.use_cuda = True
+    # hyp_params.dataset = dataset
+    hyp_params.when = args.when
+    hyp_params.batch_chunk = args.batch_chunk
+    # hyp_params.n_train, hyp_params.n_valid, hyp_params.n_test = len(train_data), len(valid_data), len(test_data)
+    hyp_params.model = str.upper(args.model.strip())
+    hyp_params.output_dim = 1
+    # hyp_params.criterion = criterion_dict.get(dataset, 'L1Loss')
+
+    # args = parser.parse_args()
     FOLD = int(args.fd)  # fold id
     MODS = list(args.mod)  # modalities: a, v, l
     DP = args.dp
