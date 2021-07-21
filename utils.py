@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "6"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 import torch
 import torch.nn as nn
 import numpy as np
@@ -25,7 +25,7 @@ GAMMA = 0.2     # loss_final = L_pers + GAMMA * L_align
 ALPHA = 0.5     # update rate for modality weights
 BETA = 50       # weight in the softmax function for modality weights
 
-N_EPOCHS = 40   # master training procedure (alg 1 in paper)
+N_EPOCHS = 10   # master training procedure (alg 1 in paper)
 
 # optimizer
 LR = 1e-3
@@ -70,17 +70,16 @@ def saveModel(FOLD, model_dict):
     dirs = f'./new_trained_models/fold{FOLD}/'
     if not os.path.exists(dirs):
         os.makedirs(dirs)
-    for mod, model in model_dict.items():
-        torch.save(model.state_dict(), f'{dirs}/{mod}')
+    model = model_dict['MulT']
+    torch.save(model, f'{dirs}/MulT.pt')
 
 
 def loadModel(FOLD, model_dict):
-    dirs = f'./pre_trained_models/fold{FOLD}'
-    for mod in model_dict.keys():
-        filename = f'{dirs}/{mod}'
-        if os.path.isfile(filename):
-            model_dict[mod].load_state_dict(torch.load(filename))
-
+    dirs = f'./pre_trained_models/fold{FOLD}/'
+    filename = f'{dirs}/MulT.pt'
+    if os.path.isfile(filename):
+        model_dict['MulT'] = torch.load(filename)
+    
     return model_dict
 
 
@@ -106,13 +105,13 @@ def calcR2Score(y_pred, y_true):
 
 def calcMAE(y_pred, y_true):
     mae = nn.L1Loss()
-    return mae(y_pred, y_true)
+    return mae(y_pred[:, 0], y_true)
 
 
 def calcPersLoss(pred, target):
     criterion = nn.MSELoss()    # input: (N), (N)
-    print(pred.shape)
-    return criterion(pred, target)
+    #print(pred.shape)
+    return criterion(pred[:, 0], target)
 
 
 def calc_epoch_time(st_time, ed_time):

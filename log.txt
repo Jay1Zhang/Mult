@@ -1,0 +1,423 @@
+FOLD 7
+Let's use 10 GPUs!
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+[SAVE MODEL] eval pers loss: 0.45399	mini pers loss: 100000.00000	eval acc: 0.6493	max_acc: 0.0000
+Epoch: 01/10 | Time: 11m 19s
+	Train persuasion loss:1.06509	Train MAE Loss:0.84080
+	Eval persuasion loss:0.45399	Eval MAE Loss:0.64929
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+[SAVE MODEL] eval pers loss: 0.08298	mini pers loss: 0.45399	eval acc: 0.2669	max_acc: 0.6493
+Epoch: 02/10 | Time: 10m 31s
+	Train persuasion loss:0.14967	Train MAE Loss:0.31508
+	Eval persuasion loss:0.08298	Eval MAE Loss:0.26693
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+[SAVE MODEL] eval pers loss: 0.04960	mini pers loss: 0.08298	eval acc: 0.2019	max_acc: 0.2669
+Epoch: 03/10 | Time: 11m 1s
+	Train persuasion loss:0.09223	Train MAE Loss:0.24289
+	Eval persuasion loss:0.04960	Eval MAE Loss:0.20189
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+[SAVE MODEL] eval pers loss: 0.03165	mini pers loss: 0.04960	eval acc: 0.1307	max_acc: 0.2019
+Epoch: 04/10 | Time: 10m 5s
+	Train persuasion loss:0.06684	Train MAE Loss:0.20560
+	Eval persuasion loss:0.03165	Eval MAE Loss:0.13074
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+[SAVE MODEL] eval pers loss: 0.01731	mini pers loss: 0.03165	eval acc: 0.0924	max_acc: 0.1307
+Epoch: 05/10 | Time: 11m 1s
+	Train persuasion loss:0.04671	Train MAE Loss:0.17101
+	Eval persuasion loss:0.01731	Eval MAE Loss:0.09236
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+[SAVE MODEL] eval pers loss: 0.01199	mini pers loss: 0.01731	eval acc: 0.0955	max_acc: 0.0924
+Epoch: 06/10 | Time: 10m 15s
+	Train persuasion loss:0.04529	Train MAE Loss:0.17048
+	Eval persuasion loss:0.01199	Eval MAE Loss:0.09551
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+Epoch: 07/10 | Time: 11m 2s
+	Train persuasion loss:0.04192	Train MAE Loss:0.16394
+	Eval persuasion loss:0.01362	Eval MAE Loss:0.10424
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+Epoch: 08/10 | Time: 10m 9s
+	Train persuasion loss:0.03339	Train MAE Loss:0.14870
+	Eval persuasion loss:0.01548	Eval MAE Loss:0.09099
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+Epoch: 09/10 | Time: 11m 36s
+	Train persuasion loss:0.03515	Train MAE Loss:0.14854
+	Eval persuasion loss:0.02343	Eval MAE Loss:0.10714
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+i_batch:  10
+Epoch: 10/10 | Time: 11m 41s
+	Train persuasion loss:0.03489	Train MAE Loss:0.14501
+	Eval persuasion loss:0.02028	Eval MAE Loss:0.09584
+FOLD 7
+Let's use 10 GPUs!
+Test persuasion loss:0.01510	Test MAE Loss:0.09673
+MSE: 0.015
+FOLD 8
+Let's use 10 GPUs!
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+[SAVE MODEL] eval pers loss: 0.95624	mini pers loss: 100000.00000	eval acc: 0.9651	max_acc: 0.0000
+Epoch: 01/10 | Time: 9m 56s
+	Train persuasion loss:1.05419	Train MAE Loss:0.84370
+	Eval persuasion loss:0.95624	Eval MAE Loss:0.96514
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+[SAVE MODEL] eval pers loss: 0.04690	mini pers loss: 0.95624	eval acc: 0.1764	max_acc: 0.9651
+Epoch: 02/10 | Time: 10m 9s
+	Train persuasion loss:0.22458	Train MAE Loss:0.39361
+	Eval persuasion loss:0.04690	Eval MAE Loss:0.17640
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+[SAVE MODEL] eval pers loss: 0.03070	mini pers loss: 0.04690	eval acc: 0.1448	max_acc: 0.1764
+Epoch: 03/10 | Time: 9m 29s
+	Train persuasion loss:0.08582	Train MAE Loss:0.23462
+	Eval persuasion loss:0.03070	Eval MAE Loss:0.14482
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+Epoch: 04/10 | Time: 9m 28s
+	Train persuasion loss:0.06985	Train MAE Loss:0.21127
+	Eval persuasion loss:0.07271	Eval MAE Loss:0.23583
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+[SAVE MODEL] eval pers loss: 0.02386	mini pers loss: 0.03070	eval acc: 0.1269	max_acc: 0.1448
+Epoch: 05/10 | Time: 9m 58s
+	Train persuasion loss:0.04819	Train MAE Loss:0.17141
+	Eval persuasion loss:0.02386	Eval MAE Loss:0.12687
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+[SAVE MODEL] eval pers loss: 0.01746	mini pers loss: 0.02386	eval acc: 0.1178	max_acc: 0.1269
+Epoch: 06/10 | Time: 10m 32s
+	Train persuasion loss:0.05058	Train MAE Loss:0.18147
+	Eval persuasion loss:0.01746	Eval MAE Loss:0.11784
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+Epoch: 07/10 | Time: 11m 33s
+	Train persuasion loss:0.04175	Train MAE Loss:0.16635
+	Eval persuasion loss:0.02847	Eval MAE Loss:0.13614
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+Epoch: 08/10 | Time: 10m 49s
+	Train persuasion loss:0.03576	Train MAE Loss:0.15268
+	Eval persuasion loss:0.04481	Eval MAE Loss:0.16669
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+Epoch: 09/10 | Time: 9m 58s
+	Train persuasion loss:0.03725	Train MAE Loss:0.15292
+	Eval persuasion loss:0.02623	Eval MAE Loss:0.13232
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+i_batch:  9
+Epoch: 10/10 | Time: 9m 42s
+	Train persuasion loss:0.03075	Train MAE Loss:0.13725
+	Eval persuasion loss:0.02509	Eval MAE Loss:0.13095
+FOLD 8
+Let's use 10 GPUs!
+Test persuasion loss:0.01717	Test MAE Loss:0.11446
+MSE: 0.017
+FOLD 9
+Let's use 10 GPUs!
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+[SAVE MODEL] eval pers loss: 0.70733	mini pers loss: 100000.00000	eval acc: 0.8188	max_acc: 0.0000
+Epoch: 01/10 | Time: 8m 58s
+	Train persuasion loss:1.09273	Train MAE Loss:0.82859
+	Eval persuasion loss:0.70733	Eval MAE Loss:0.81882
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+[SAVE MODEL] eval pers loss: 0.05449	mini pers loss: 0.70733	eval acc: 0.2073	max_acc: 0.8188
+Epoch: 02/10 | Time: 9m 43s
+	Train persuasion loss:0.21753	Train MAE Loss:0.38846
+	Eval persuasion loss:0.05449	Eval MAE Loss:0.20733
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+[SAVE MODEL] eval pers loss: 0.03704	mini pers loss: 0.05449	eval acc: 0.1459	max_acc: 0.2073
+Epoch: 03/10 | Time: 9m 23s
+	Train persuasion loss:0.10352	Train MAE Loss:0.25809
+	Eval persuasion loss:0.03704	Eval MAE Loss:0.14589
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+Epoch: 04/10 | Time: 9m 58s
+	Train persuasion loss:0.06436	Train MAE Loss:0.20316
+	Eval persuasion loss:0.03721	Eval MAE Loss:0.15236
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+[SAVE MODEL] eval pers loss: 0.01911	mini pers loss: 0.03704	eval acc: 0.0856	max_acc: 0.1459
+Epoch: 05/10 | Time: 9m 24s
+	Train persuasion loss:0.04881	Train MAE Loss:0.17722
+	Eval persuasion loss:0.01911	Eval MAE Loss:0.08560
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+Epoch: 06/10 | Time: 10m 15s
+	Train persuasion loss:0.04387	Train MAE Loss:0.16762
+	Eval persuasion loss:0.02991	Eval MAE Loss:0.12382
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+Epoch: 07/10 | Time: 10m 55s
+	Train persuasion loss:0.03443	Train MAE Loss:0.14963
+	Eval persuasion loss:0.02101	Eval MAE Loss:0.07707
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+Epoch: 08/10 | Time: 9m 11s
+	Train persuasion loss:0.03412	Train MAE Loss:0.14843
+	Eval persuasion loss:0.02070	Eval MAE Loss:0.10490
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+Epoch: 09/10 | Time: 7m 30s
+	Train persuasion loss:0.03286	Train MAE Loss:0.14665
+	Eval persuasion loss:0.02083	Eval MAE Loss:0.08717
+i_batch:  0
+i_batch:  1
+i_batch:  2
+i_batch:  3
+i_batch:  4
+i_batch:  5
+i_batch:  6
+i_batch:  7
+i_batch:  8
+Epoch: 10/10 | Time: 6m 58s
+	Train persuasion loss:0.03352	Train MAE Loss:0.14693
+	Eval persuasion loss:0.02431	Eval MAE Loss:0.10928
+FOLD 9
+Let's use 10 GPUs!
+Test persuasion loss:0.01042	Test MAE Loss:0.09246
+MSE: 0.01

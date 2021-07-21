@@ -32,8 +32,9 @@ def gen_meta_emb(sample):
 
 def fit_m2p2(m2p2_models, MODS, sample_batched):
     #y_pred = m2p2_models['mult'](latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb)   # (N, 1)
-    y_pred = m2p2_models['mult'](sample_batched['l_data'], sample_batched['a_data'], sample_batched['v_data'])  # (N, 1)
+    y_pred, _ = m2p2_models['MulT'](sample_batched['l_data'], sample_batched['a_data'], sample_batched['v_data'])  # (N, 1)
     y_true = sample_batched['ed_vote'].float().to(device)   # (N)
+    y_pred = y_pred.float().to(device)
 
     # calc loss
     loss_pers = calcPersLoss(y_pred, y_true)
@@ -58,6 +59,7 @@ def train_m2p2(m2p2_models, MODS, iterator, optimizer, scheduler):
         # backward
         loss.backward()
         optimizer.step()
+        print('i_batch: ', i_batch)
 
     scheduler.step()
     return total_loss / (i_batch+1), total_acc / (i_batch + 1)    # mean
